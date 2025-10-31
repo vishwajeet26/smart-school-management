@@ -10,9 +10,10 @@ import {
 
 interface GenericTableProps<T> {
   title?: string;
-  columns: {header: string; accessor: string}[];
+  columns: { header: string; accessor: string }[];
   data: T[];
   maxHeight?: string;
+  onRowClick?: (rowData: T) => void;
 }
 
 export function GenericTable<T extends Record<string, unknown>>({
@@ -20,6 +21,7 @@ export function GenericTable<T extends Record<string, unknown>>({
   columns,
   data,
   maxHeight = "800px",
+  onRowClick
 }: GenericTableProps<T>) {
   return (
     <div className="flex flex-col gap-10 h-screen p-5">
@@ -44,7 +46,8 @@ export function GenericTable<T extends Record<string, unknown>>({
             {data.map((row, i) => (
               <TableRow
                 key={i}
-                className="bg-white dark:border-gray-700 dark:bg-gray-800"
+                className="bg-white dark:border-gray-700 dark:bg-gray-800 cursor-pointer"
+                onClick={() => onRowClick?.(row)}
               >
                 {columns.map((col) => (
                   <TableCell
