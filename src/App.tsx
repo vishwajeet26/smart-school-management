@@ -1,23 +1,29 @@
 import { Routes, Route } from "react-router";
+// pages
 import Dashboard from "./pages/Dashboard";
 import Students from "./pages/Students";
 import Feedback from "./pages/Feedback";
-import Login from "./pages/Login";
-import AdminLayout from "./layouts/AdminLayout";
 import NotFound from "./pages/NotFound";
+import Teachers from "./pages/Teachers";
+import Report from "./pages/Report";
+import MainLayout from "./layouts/MainLayout";
+//layouts
 
 function App() {
   return (
     <>
       <div>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/admin" element={<AdminLayout />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/students" element={<Students />} />
-          <Route path="/feedback" element={<Feedback />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<MainLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="students" element={<Students />} />
+              <Route path="teachers" element={<Teachers />} />
+              <Route path="feedback" element={<Feedback />} />
+              <Route path="report" element={<Report />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
       </div>
     </>
   );
