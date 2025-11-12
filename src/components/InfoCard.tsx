@@ -38,7 +38,7 @@ export  const  InfoCard: React.FC<InfoCardProps> = ({
       {onBack && (
         <button
           onClick={onBack}
-          className="flex items-center text-sm text-white mb-2 hover:underline"
+          className="flex items-center text-sm text-white mb-2 hover:underline cursor-pointer"
         >
           <FaArrowLeft className="mr-2" /> Back
         </button>

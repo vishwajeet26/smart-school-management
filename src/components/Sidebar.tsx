@@ -12,7 +12,7 @@ const Sidebar: React.FC = () => {
     { name: "Students", icon: <PiStudentFill />, route: "/students" },
     { name: "Teachers", icon: <GiTeacher />, route: "/teachers" },
     { name: "Feedback", icon: <MdOutlineFeedback />, route: "/feedback" },
-    { name: "Report", icon: <HiDocumentReport />, route: "/report" },
+    { name: "Report", icon: <HiDocumentReport />, route: "/reports" },
   ];
 
   return (
